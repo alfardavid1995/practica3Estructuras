@@ -40,10 +40,9 @@ public class Persona {
 
     @java.lang.Override
     public java.lang.String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", cedula=" + cedula +
-                ", discapacidad=" + discapacidad +
-                '}';
+        return "Persona:\n " +
+                "nombre: " + nombre +
+                ", cedula: " + cedula +
+                ", discapacidad:" + discapacidad;
     }
 }
