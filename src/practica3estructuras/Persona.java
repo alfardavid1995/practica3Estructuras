@@ -6,10 +6,12 @@ public class Persona {
    
     private String nombre;
     private int cedula;
+    private boolean discapacidad;
 
-    public Persona(String nombre, int cedula) {
+    public Persona(String nombre, int cedula, boolean discapacidad) {
         this.nombre = nombre;
         this.cedula = cedula;
+        this.discapacidad = discapacidad;
     }
 
     public String getNombre() {
@@ -27,7 +29,21 @@ public class Persona {
     public void setCedula(int cedula) {
         this.cedula = cedula;
     }
-    
-    
-    
+
+    public boolean isDiscapacidad() {
+        return discapacidad;
+    }
+
+    public void setDiscapacidad(boolean discapacidad) {
+        this.discapacidad = discapacidad;
+    }
+
+    @java.lang.Override
+    public java.lang.String toString() {
+        return "Persona{" +
+                "nombre='" + nombre + '\'' +
+                ", cedula=" + cedula +
+                ", discapacidad=" + discapacidad +
+                '}';
+    }
 }
