@@ -18,25 +18,28 @@ public class Practica3Estructuras {
     public static void main(String[] args) {
         // TODO code application logic
         boolean seguir = true;
+        Cola colita = new Cola();
+        
         do{
             int selector=Integer.parseInt(JOptionPane.showInputDialog(""
                     + "Seleccion de menu principal:"
                     + "1.Insertar persona"
                     + "2.Verificar cola"
                     + "3.Atender persona"
-                    + "4.Salir"));
+                    + "4.Buscar Persona"
+                    + "5.Salir"));
             
             switch(selector){
                 case 1:
                     Persona personita= crearPersona();
-                    Nodo nodito 
+                    colita.encola(null, personita);
                     break;
                 case 2:
                     break;
                 case 3:
                     break;
-                
-                
+                case 4:
+                    break;
             }
            
         }while(seguir);
