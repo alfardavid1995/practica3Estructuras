@@ -7,13 +7,15 @@ public class Cola {
     public Cola() {
     }
     
-    public void encola(Nodo d){
+    public void encola(Nodo nuevo, Persona persona){
         if(frente == null){  // significa que la cola esta vacia
-            frente = d;
-            ultimo = d;
-        } else{
-            ultimo.setAtras(d);
-            ultimo=d;
+            frente = nuevo;
+            ultimo = nuevo;
+        }else if (persona.isDiscapacidad()){//agrega discapacitado de primero
+            frente = nuevo;
+        }else{
+            ultimo.setAtras(nuevo);
+            ultimo=nuevo;
         }
     }
     

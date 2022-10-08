@@ -1,15 +1,15 @@
 package practica3estructuras;
 
 public class Nodo {
-    private String dato;
+    private Persona persona;
     private Nodo atras;
 
-    public String getDato() {
-        return dato;
+    public Persona getPersona() {
+        return persona;
     }
 
-    public void setDato(String dato) {
-        this.dato = dato;
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     public Nodo getAtras() {
@@ -20,10 +20,11 @@ public class Nodo {
         this.atras = atras;
     }
 
-    public Nodo(String dato) {
-        this.dato = dato;
-    }
-    
     @Override
-    public String toString(){ return dato; }
+    public String toString() {
+        return "Nodo{" +
+                "persona=" + persona +
+                ", atras=" + atras +
+                '}';
+    }
 }
