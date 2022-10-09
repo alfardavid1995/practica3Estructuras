@@ -1,5 +1,7 @@
 package practica3estructuras;
 
+import javax.swing.JOptionPane;
+
 public class Cola {
     private Nodo frente;
     private Nodo ultimo;
@@ -7,15 +9,30 @@ public class Cola {
     public Cola() {
     }
     
-    public void encola(Nodo nuevo, Persona persona){
-        if(frente == null){  // significa que la cola esta vacia
-            frente = nuevo;
-            ultimo = nuevo;
-        }else if (persona.isDiscapacidad()){//agrega discapacitado de primero
-            frente = nuevo;
-        }else{
-            ultimo.setAtras(nuevo);
-            ultimo=nuevo;
+    public void encola(Persona persona){
+        
+        Nodo nodito = new Nodo();
+        nodito.setPersona(persona);
+        nodito.setAtras(null);
+        
+        if (ColaVacia()){
+            frente = nodito;
+            ultimo = nodito;
+        }else if(persona.isDiscapacidad()){
+            nodito.setAtras(frente);
+            nodito = frente;
+        }
+        else{
+            ultimo.setAtras(nodito);
+            ultimo = nodito;
+        }
+    }
+    
+    public boolean ColaVacia(){
+        if (frente==null){
+            return true;
+        }else {
+            return false;
         }
     }
     
@@ -27,6 +44,8 @@ public class Cola {
         }
         return aux;
     }
+    
+   
     
     //SEARCH DE PILAS
 //    public boolean search(int reference) {

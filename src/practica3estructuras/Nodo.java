@@ -1,6 +1,14 @@
 package practica3estructuras;
 
 public class Nodo {
+    public Nodo() {
+    }
+    
+    public Nodo(Persona persona, Nodo atras) {
+        this.persona = persona;
+        this.atras = atras;
+    }
+
     private Persona persona;
     private Nodo atras;
 
