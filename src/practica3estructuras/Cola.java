@@ -16,19 +16,23 @@ public class Cola {
         nodito.setAtras(null);
         
         if (ColaVacia()){
+            //si está vacía el primer nodo lo define como primero y último
             frente = nodito;
             ultimo = nodito;
         }else if(persona.isDiscapacidad()){
+            //si la persona es discapacitada, la pondrá de primera
             nodito.setAtras(frente);
-           frente  = nodito;
+            frente  = nodito;
         }
         else{
+            //si no está vacía el nuevo nodo lo manda de último
             ultimo.setAtras(nodito);
             ultimo = nodito;
         }
     }
     
     public boolean ColaVacia(){
+        //para determinar si la cola está vacía
         if (frente==null){
             return true;
         }else {
@@ -52,7 +56,7 @@ public class Cola {
         return aux;
     }
     
-    //SEARCH DE PILAS
+    //SEARCH DE COLAS
     public boolean search(int reference) {
         // Crea una copia de la cola.
         Nodo aux = frente;
@@ -71,9 +75,10 @@ public class Cola {
                 aux = aux.getAtras();
             }
         }
-        // Retorna el value de la bandera.
+        //muestra si se encontró el nodo o no
         JOptionPane.showMessageDialog(null,
                 "¿Se encontró la persona solicitada?\n"+exist);
+        // Retorna el value de la bandera.
         return exist;
     }
     
@@ -82,10 +87,12 @@ public class Cola {
         String stringConTodalaInfodelaCola="";
         Nodo aux=frente;
         while(aux!=null){
-            stringConTodalaInfodelaCola=stringConTodalaInfodelaCola+aux.getPersona().toString()+"\n"; 
+            stringConTodalaInfodelaCola=stringConTodalaInfodelaCola
+                    +aux.getPersona().toString()+"\n"; 
             aux=aux.getAtras();
         }
-        stringConTodalaInfodelaCola="<Frente>\n"+ stringConTodalaInfodelaCola+"<Final>"; 
+        stringConTodalaInfodelaCola="<Frente>\n"
+                + stringConTodalaInfodelaCola+"<Final>"; 
         return stringConTodalaInfodelaCola;
     }
 }

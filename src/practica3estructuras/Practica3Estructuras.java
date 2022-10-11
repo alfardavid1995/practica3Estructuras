@@ -12,10 +12,10 @@ Gustavo Marin
 public class Practica3Estructuras {
 
     public static void main(String[] args) {
-        // TODO code application logic
+        
         boolean seguir = true;
         Cola colita = new Cola();
-//se crean los botones del menu principal
+        //se crean los botones del menu principal
         String[] botones = {"Insertar persona", "Mostar cola",
                 "Atender persona", "Buscar Persona", "Salir"};
 
@@ -30,25 +30,28 @@ public class Practica3Estructuras {
             switch(opcion){
                 case 0:
                     Persona personita= crearPersona();// se crea una persona 
-//                    con todos los parametros
-                    colita.encola(personita);
+                    //con todos los parametros
+                    colita.encola(personita);//se encola la persona
                     break;
                 case 1:
                     if(colita.ColaVacia()){
-                           JOptionPane.showMessageDialog(null,"La cola está vacía");
+                        //si la cola está vacía, muestra un mensaje
+                           JOptionPane.showMessageDialog
+                                (null,"La cola está vacía");
                     }else{
+                        //muestra la cola actual
                         JOptionPane.showMessageDialog(null, colita.toString());
                     }
                     
                     break;
                 case 2:
                     colita.atiende();
-                    
                     break;
                 case 3:
                     int n=Integer.parseInt(JOptionPane.showInputDialog(
                             "Digite la cedula del usuario que desea buscar"));
-                   colita.search(n); 
+                    colita.search(n);//se determina si se encuentra 
+                    //a la persona o no, con el método search
                     break;
                 case 4:
                     seguir = false;
@@ -62,11 +65,13 @@ public class Practica3Estructuras {
         String nombre;
         int cedula = 0;
         boolean discapacitado = false;
+        //se crean los botones para que el usuario 
+        //ingrese si es discapacitado o no
         String[] botones = {"No", "Sí"};
 
-          nombre=JOptionPane.showInputDialog(
-                            "Digite el nombre de la persona");
-          
+        nombre=JOptionPane.showInputDialog("Digite el nombre de la persona");
+        
+        //si el nombre o cedula son null, muestra un mensaje
         if (nombre==null){
             nombre=JOptionPane.showInputDialog("No se permiten espacios en "
                     + "blanco, digite el nombre de la persona");
@@ -79,14 +84,17 @@ public class Practica3Estructuras {
              nombre=JOptionPane.showInputDialog("No se permiten espacios en "
                      + "blanco, digite el numero de cedula de la persona");
         }
-
+        
+        //pregunta si el usuario es discapacitado(con botones)
         int opcion = JOptionPane.showOptionDialog(null,
                 "El usuario es discapacitado:",
                 "Programa Colas",
                 JOptionPane.DEFAULT_OPTION,
                 JOptionPane.QUESTION_MESSAGE, null,
                 botones, botones[0]);
-
+        
+        //se utiliza a la hora de mostrar los datos de la persona, 
+        //en el apartado en el que se muestra si es discapacitado o no
         if(opcion==1){
             discapacitado = true;
         }else{
@@ -95,7 +103,5 @@ public class Practica3Estructuras {
                        
         Persona personita = new Persona(nombre, cedula, discapacitado);
         return personita;
-    }
-               
-                     
+    }         
 }
