@@ -20,7 +20,7 @@ public class Cola {
             ultimo = nodito;
         }else if(persona.isDiscapacidad()){
             nodito.setAtras(frente);
-            nodito = frente;
+           frente  = nodito;
         }
         else{
             ultimo.setAtras(nodito);
