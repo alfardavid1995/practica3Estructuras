@@ -33,7 +33,8 @@ public class Practica3Estructuras {
             
             switch(selector){
                 case 1:
-                    Persona personita= crearPersona();// se crea una persona con todos los parametros
+                    Persona personita= crearPersona();// se crea una persona 
+//                    con todos los parametros
                     colita.encola(personita);
                     break;
                 case 2:
@@ -41,9 +42,14 @@ public class Practica3Estructuras {
                     System.out.println(colita);
                     break;
                 case 3:
+                    colita.atiende();
+                     System.out.println("/////////////////////////");
+                    System.out.println(colita);
                     break;
                 case 4:
-                    
+                    int n=Integer.parseInt(JOptionPane.showInputDialog(
+                            "Digite la cedula del usuario que desea buscar"));
+                    System.out.println(colita.search(n)); 
                     break;
                 case 5:
                     seguir = false;
@@ -66,7 +72,7 @@ public class Practica3Estructuras {
           
         if (nombre==null){
             nombre=JOptionPane.showInputDialog(
-                            "No se permiten espacios en blanco, digite el nombre de la persona");
+         "No se permiten espacios en blanco, digite el nombre de la persona");
         }else{
             cedula = Integer.parseInt(JOptionPane.showInputDialog(
                             "Digite el numero de cedula"));
@@ -74,12 +80,12 @@ public class Practica3Estructuras {
         
         if (cedula==0){
              nombre=JOptionPane.showInputDialog(
-                            "No se permiten espacios en blanco, digite el numero de cedula de la persona");
+ "No se permiten espacios en blanco, digite el numero de cedula de la persona");
         }
         
                 int selectorDiscapacitado=Integer.parseInt(
                         JOptionPane.showInputDialog(
-                        "El usuario es disacapacitado:\n"
+                        "El usuario es discapacitado:\n"
                         + "1.si\n"
                         + "2.no\n"));
                 
