@@ -39,13 +39,18 @@ public class Cola {
     public Nodo atiende(){
         Nodo aux = frente;
         if(frente!=null){
+            //muestra la persona que está siendo atendida
+            JOptionPane.showMessageDialog(null, 
+                "Cliente que está siendo atendido: "+frente.getPersona());
             frente=frente.getAtras();
             aux.setAtras(null);
+        }else if(frente==null){
+            //Si se intenta atender a alguien, pero la cola está vacía,
+            //muestra un mensaje
+            JOptionPane.showMessageDialog(null,"La cola está vacía");
         }
         return aux;
     }
-    
-   
     
     //SEARCH DE PILAS
     public boolean search(int reference) {
