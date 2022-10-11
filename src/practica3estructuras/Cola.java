@@ -72,12 +72,13 @@ public class Cola {
     
     @Override
     public String toString(){
-        String s="";
+        String stringConTodalaInfodelaCola="";
         Nodo aux=frente;
         while(aux!=null){
-            s+=aux+"\n";
+            stringConTodalaInfodelaCola=stringConTodalaInfodelaCola+aux.getPersona().toString()+"\n"; 
             aux=aux.getAtras();
         }
-        return s;
+        stringConTodalaInfodelaCola="<Frente>\n"+ stringConTodalaInfodelaCola+"<Final>"; 
+        return stringConTodalaInfodelaCola;
     }
 }

@@ -37,8 +37,7 @@ public class Practica3Estructuras {
                     colita.encola(personita);
                     break;
                 case 1:
-                    System.out.println("/////////////////////////");
-                    System.out.println(colita);
+                    JOptionPane.showMessageDialog(null, colita.toString());
                     break;
                 case 2:
                     colita.atiende();
