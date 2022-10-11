@@ -41,7 +41,7 @@ public class Practica3Estructuras {
                     break;
                 case 2:
                     colita.atiende();
-                     System.out.println("/////////////////////////");
+                    System.out.println("/////////////////////////");
                     System.out.println(colita);
                     break;
                 case 3:
@@ -64,7 +64,7 @@ public class Practica3Estructuras {
         String nombre;
         int cedula = 0;
         boolean discapacitado = false;
-        String[] botones = {"SÍ", "NO"};
+        String[] botones = {"No", "Sí"};
 
           nombre=JOptionPane.showInputDialog(
                             "Digite el nombre de la persona");
