@@ -17,39 +17,40 @@ public class Practica3Estructuras {
         // TODO code application logic
         boolean seguir = true;
         Cola colita = new Cola();
-        
-        
-        
+
+        String[] botones = {"Insertar persona", "Mostar cola",
+                "Atender persona", "Buscar Persona", "Salir"};
+
+
         do{
-            int selector=Integer.parseInt(JOptionPane.showInputDialog(""
-                    + "Seleccion de menu principal:\n"
-                    + "1.Insertar persona\n"
-                    + "2.Mostar cola\n"
-                    + "3.Atender persona\n"
-                    + "4.Buscar Persona\n"
-                    + "5.Salir"));
-            
-            switch(selector){
-                case 1:
+            int opcion = JOptionPane.showOptionDialog(null,
+                    "Seleccione una de las siguientes opciones:",
+                    "Programa Colas",
+                    JOptionPane.DEFAULT_OPTION,
+                    JOptionPane.QUESTION_MESSAGE, null,
+                    botones, botones[0]);
+
+            switch(opcion){
+                case 0:
                     Persona personita= crearPersona();// se crea una persona 
 //                    con todos los parametros
                     colita.encola(personita);
                     break;
-                case 2:
+                case 1:
                     System.out.println("/////////////////////////");
                     System.out.println(colita);
                     break;
-                case 3:
+                case 2:
                     colita.atiende();
                      System.out.println("/////////////////////////");
                     System.out.println(colita);
                     break;
-                case 4:
+                case 3:
                     int n=Integer.parseInt(JOptionPane.showInputDialog(
                             "Digite la cedula del usuario que desea buscar"));
                     System.out.println(colita.search(n)); 
                     break;
-                case 5:
+                case 4:
                     seguir = false;
                     break;
             }
