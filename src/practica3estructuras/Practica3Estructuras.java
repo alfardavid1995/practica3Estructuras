@@ -65,7 +65,8 @@ public class Practica3Estructuras {
         String nombre;
         int cedula = 0;
         boolean discapacitado = false;
-        
+        String[] botones = {"SÍ", "NO"};
+
           nombre=JOptionPane.showInputDialog(
                             "Digite el nombre de la persona");
           
@@ -81,13 +82,16 @@ public class Practica3Estructuras {
              nombre=JOptionPane.showInputDialog("No se permiten espacios en "
                      + "blanco, digite el numero de cedula de la persona");
         }
-        
-        int selectorDiscapacitado=Integer.parseInt(JOptionPane.showInputDialog(
-                "El usuario es discapacitado:\n"
-                        + "1.si\n"
-                        + "2.no\n"));
+
+        int opcion = JOptionPane.showOptionDialog(null,
+                "El usuario es discapacitado:",
+                "Programa Colas",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.QUESTION_MESSAGE, null,
+                botones, botones[0]);
+
                 
-        if(selectorDiscapacitado==1){
+        if(opcion==1){
             discapacitado = true;
         }else{
             discapacitado = false;
