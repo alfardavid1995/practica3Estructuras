@@ -72,6 +72,8 @@ public class Cola {
             }
         }
         // Retorna el value de la bandera.
+        JOptionPane.showMessageDialog(null,
+                "¿Se encontró la persona solicitada?\n"+exist);
         return exist;
     }
     
