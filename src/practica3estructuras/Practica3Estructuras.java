@@ -3,6 +3,7 @@ package practica3estructuras;
 import javax.swing.JOptionPane;
 
 /**
+ *
 David Alfaro
 Mariana Alvarez
 Alejandro Méndez
@@ -10,17 +11,13 @@ Gustavo Marin
  */
 public class Practica3Estructuras {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic
         boolean seguir = true;
         Cola colita = new Cola();
-
+//se crean los botones del menu principal
         String[] botones = {"Insertar persona", "Mostar cola",
                 "Atender persona", "Buscar Persona", "Salir"};
-
 
         do{
             int opcion = JOptionPane.showOptionDialog(null,
@@ -37,17 +34,21 @@ public class Practica3Estructuras {
                     colita.encola(personita);
                     break;
                 case 1:
-                    JOptionPane.showMessageDialog(null, colita.toString());
+                    if(colita.ColaVacia()){
+                           JOptionPane.showMessageDialog(null,"La cola está vacía");
+                    }else{
+                        JOptionPane.showMessageDialog(null, colita.toString());
+                    }
+                    
                     break;
                 case 2:
                     colita.atiende();
-                    System.out.println("/////////////////////////");
-                    System.out.println(colita);
+                    
                     break;
                 case 3:
                     int n=Integer.parseInt(JOptionPane.showInputDialog(
                             "Digite la cedula del usuario que desea buscar"));
-                    System.out.println(colita.search(n)); 
+                   colita.search(n); 
                     break;
                 case 4:
                     seguir = false;
@@ -56,10 +57,7 @@ public class Practica3Estructuras {
            
         }while(seguir);
     }        
-    /**
-     *
-     * @return
-     */
+  
     public static Persona crearPersona(){
         String nombre;
         int cedula = 0;
@@ -89,15 +87,12 @@ public class Practica3Estructuras {
                 JOptionPane.QUESTION_MESSAGE, null,
                 botones, botones[0]);
 
-                
         if(opcion==1){
             discapacitado = true;
         }else{
             discapacitado = false;
         }
                        
-           
-
         Persona personita = new Persona(nombre, cedula, discapacitado);
         return personita;
     }

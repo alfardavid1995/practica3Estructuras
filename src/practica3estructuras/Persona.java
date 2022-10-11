@@ -1,6 +1,4 @@
-
 package practica3estructuras;
-
 
 public class Persona {
    
