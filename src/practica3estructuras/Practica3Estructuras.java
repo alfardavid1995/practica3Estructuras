@@ -1,14 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package practica3estructuras;
 
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author css124646
+David Alfaro
+Mariana Alvarez
+Alejandro Méndez
+Gustavo Marin
  */
 public class Practica3Estructuras {
 
@@ -71,29 +69,28 @@ public class Practica3Estructuras {
                             "Digite el nombre de la persona");
           
         if (nombre==null){
-            nombre=JOptionPane.showInputDialog(
-         "No se permiten espacios en blanco, digite el nombre de la persona");
+            nombre=JOptionPane.showInputDialog("No se permiten espacios en "
+                    + "blanco, digite el nombre de la persona");
         }else{
             cedula = Integer.parseInt(JOptionPane.showInputDialog(
-                            "Digite el numero de cedula"));
+                    "Digite el numero de cedula"));
         }
         
         if (cedula==0){
-             nombre=JOptionPane.showInputDialog(
- "No se permiten espacios en blanco, digite el numero de cedula de la persona");
+             nombre=JOptionPane.showInputDialog("No se permiten espacios en "
+                     + "blanco, digite el numero de cedula de la persona");
         }
         
-                int selectorDiscapacitado=Integer.parseInt(
-                        JOptionPane.showInputDialog(
-                        "El usuario es discapacitado:\n"
+        int selectorDiscapacitado=Integer.parseInt(JOptionPane.showInputDialog(
+                "El usuario es discapacitado:\n"
                         + "1.si\n"
                         + "2.no\n"));
                 
-               if(selectorDiscapacitado==1){
-                        discapacitado = true;
-               }else{
-                        discapacitado = false;
-               }
+        if(selectorDiscapacitado==1){
+            discapacitado = true;
+        }else{
+            discapacitado = false;
+        }
                        
            
 
