@@ -63,8 +63,8 @@ public class Cola {
        
         // Bandera para verificar si exist el elemento a search.
         boolean exist = false;
-        // Recorre la pila hasta llegar encontrar el node o llegar al final
-        // de la pila.
+        // Recorre la cola hasta llegar encontrar el node o llegar al final
+        // de la cola.
         while (exist != true && aux != null) {
             // Compara si el value del node es igual que al de reference.
             if (reference == aux.getPersona().getCedula()) {
